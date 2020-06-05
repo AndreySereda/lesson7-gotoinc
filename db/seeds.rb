@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ActiveRecord::Base.translation do
+  assessment = Assessment.create!(title: 'Какое ты животное?')
+  Question.create(assessment: assessment, text: 'Сколько тебе лет?').tap do |question|
+    question.variants.create!(text: 'Меньше 10', value:1)
+    question.variants.create!(text: '10-20', value:2)
+    question.variants.create!(text: '20-30', value:3)
+    question.variants.create!(text: '30+', value:4)
+  end
+end

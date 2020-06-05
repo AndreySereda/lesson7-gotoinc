@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Тут я выполнил задание 7 урока 
+2. Сгенирировать Scaffold для Question - поля text, answer
+3. Сделать модель User - поля first_name, last_name - Реализовать CRUD - руками - не копируя с question
