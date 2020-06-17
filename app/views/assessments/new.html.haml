@@ -1,0 +1,11 @@
+= form_for @assessment do |f|
+  = f.label :name_assessnment
+  = f.text_field :title
+  #questions
+    %h3 Questions
+    = f.fields_for :questions, @assessment.questions.build do |question|
+      = render 'question', f: question
+      .links
+      = link_to_add_association 'Add', f, :questions, partial: 'question'
+      .action
+    =f.submit "Create"

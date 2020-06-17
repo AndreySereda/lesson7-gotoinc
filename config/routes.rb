@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'page#home'
-  devise_for :users
-  resources :questions
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  #get '/users', to: 'users#index'
+  devise_for :users, controllers: {
+      sessions: 'users/sessions'
+  }
+  resources :questions, only: [:index]
   resources :users
+  resources :assessments
 end

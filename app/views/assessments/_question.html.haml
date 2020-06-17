@@ -1,0 +1,9 @@
+.nested-fields
+  .field.question
+    = f.text_field :text
+    .variants
+      = f.fields_for :variants, @question.variants.build do |variant|
+        = render 'variant', f: variant
+    .links
+    = link_to_remove_association 'add variant', f, :variants
+    = link_to_remove_association "remove question", f

@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   #GET - поиск всех users
   def index
+    UserMailer.example(User.new(email: 'bo@samurails.com')).deliver
     @users = User.all
   end
 
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
       end
   end

@@ -21,6 +21,9 @@ gem 'pg'
 gem 'haml'
 gem 'pry-rails', :group => :development
 gem 'devise'
+gem "letter_opener", :group => :development
+gem 'cocoon'
+gem 'bootstrap', '~> 4.5.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
