@@ -1,6 +1,6 @@
 class VariantsController < ApplicationController
 
-  before_action :set_variant, only: [:show, :edit, :update, :destroy]
+  before_action :set_variant, only: %w[:show, :edit, :update, :destroy]
   def create
     @variant = Variant.new(variant_params)
   end

@@ -1,6 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_assessment, only: %i[:show, :edit, :update, :destroy]
+  before_action :set_assessment, only: %w[:show, :edit, :update, :destroy]
 
   def create
     @assessment = Assessment.new(assessment_params)
@@ -20,15 +20,14 @@ class AssessmentsController < ApplicationController
   end
 
   def show
-    if @assessment.blank?
-      redirect_to assessment_path
-    else
-      @questions = @assessment.questions
-    end
+    #if @assessment.blank?
+    #redirect_to assessment_path
+    #else
+    #@questions = @assessment.questions
+    #end
   end
 
   def edit
-    @assessment.find(params[:id])
   end
 
 
@@ -44,7 +43,7 @@ class AssessmentsController < ApplicationController
   private
 
   def set_assessment
-    @assessment = Assessment.find_by(id: params[:id])
+    @assessment = Assessment.find(params[:id])
   end
 
   def assessment_params

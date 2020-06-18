@@ -1,4 +1,6 @@
 .nested-fields
+  %h3 Variant
   = f.text_field :text
-  = f.text_field :value
+  %h3 Variant value
+  = f.number_field :value
   = link_to_remove_association "remove variant", f

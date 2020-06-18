@@ -1,4 +1,9 @@
-%h1 @assessment.title
--@questions.each_with_index do |q, index |
+%h1
+  = @assessment.title
+- @questions.each_with_index do |q, index|
   %span= index + 1
   %span= q.text
+  - q.variants.each do |v|
+    %p Variant
+    %span= v.text
+    %span= v.value
